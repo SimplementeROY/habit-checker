@@ -6,7 +6,7 @@ export default function Task({ task, handleEdit, handleDelete, toggleTask, isDis
     const handleCheckboxChange = () => {
         if (isFilteredDay) {
             handleErrorMessage(true);
-            setTimeout(() => handleErrorMessage(false), 1000); // Limpiar el mensaje después de 3 segundos
+            setTimeout(() => handleErrorMessage(false), 1500); // Limpiar el mensaje después de 3 segundos
         } else {
             toggleTask(task.id);
         }

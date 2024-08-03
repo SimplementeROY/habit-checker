@@ -78,12 +78,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/habit-checker" element={<Header />}>
+        <Route path="habit-checker" element={<Header />}>
           <Route
             index
             element={<Home tasks={tasks} setTasks={setTasks} setCompletedTasks={setCompletedTasks} date={currentDate} />}
           />
-          <Route path="graph" element={<Chart tasksDone={completedTasks} />} />
+          <Route path="chart" element={<Chart tasksDone={completedTasks} />} />
           <Route path="calendar" element={<Calendar tasks={completedTasks}/>} />
         </Route>
       </Routes>

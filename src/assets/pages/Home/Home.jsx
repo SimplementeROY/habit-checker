@@ -132,7 +132,8 @@ export default function Home({ tasks = [], setTasks, setCompletedTasks, date }) 
             <div className="error-message">
               <img 
                 src="https://i.pinimg.com/originals/dc/5d/51/dc5d513617f16c73ef5c8a09ea075d85.jpg" 
-                alt="Más despacio velocista meme" 
+                alt="Más despacio velocista meme"
+                className="error"
               />
             </div>
           )}
