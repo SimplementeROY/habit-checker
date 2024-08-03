@@ -78,7 +78,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Header />}>
+        <Route path="/habit-checker" element={<Header />}>
           <Route
             index
             element={<Home tasks={tasks} setTasks={setTasks} setCompletedTasks={setCompletedTasks} date={currentDate} />}
