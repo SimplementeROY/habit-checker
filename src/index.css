@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+#root{
+  width: 80%;
+  height: 95%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+main{
+  flex: 1;
+  padding: 10px 40px;
+  display: grid;
+  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: white;
+}
+
+body *{
+  font-family: "Chivo", sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.button{
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.button:hover{
+  background-color: #333333;
+  cursor: pointer;
+}
+
+.button:active{
+  background-color: #262626;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Libre Franklin", sans-serif;
+}

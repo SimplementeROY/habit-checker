@@ -1,0 +1,37 @@
+
+.modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.close-form-button{
+    margin: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.close-form-button:hover{
+    background-color: #eee;
+}

@@ -1,0 +1,39 @@
+header{
+    background-color: black;
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding-inline-start: 0;
+}
+
+
+.app-title{
+    margin: 0;
+    color: white;
+    flex: 80%;
+
+}
+
+nav{
+    flex: 20%;
+}
+

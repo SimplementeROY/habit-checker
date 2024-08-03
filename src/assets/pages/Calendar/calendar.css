@@ -1,0 +1,36 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 10%;
+}
+
+.day {
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    color: black;
+}
+
+.day.today {
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.prev-month, .next-month{
+    padding: 10px 20px;
+}
+
+.calendar-container{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 600px;
+    border-radius: 20px;
+    height: 90%;
+}

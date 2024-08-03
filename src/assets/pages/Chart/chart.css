@@ -1,0 +1,22 @@
+.chart-container{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 1000px;
+    height: 90%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.chart-title{
+    flex: 1;
+}
+.chart{
+    flex: 10;
+}
+
+.custom-tooltip{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}

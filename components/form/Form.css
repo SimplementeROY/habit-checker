@@ -1,0 +1,94 @@
+.add-task-button-form{
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.frequency{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 350px;
+}
+
+input[type="text"]{
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    height: 30px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+input[type="time"]{
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    height: 30px;
+    padding: 5px;
+}
+
+.container .frequency-option {
+    margin: 0;
+    flex: 95%;
+    font-size: 18px;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox{
+    opacity: 0.1;
+}
+
+.check{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    flex: 5%;
+}
+
+.checkmark{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkbox:checked ~ .checkmark{
+    background-color: black;
+}
+
+.checkbox:checked ~ .checkmark::after{
+    content: "";
+    position: absolute;
+    width: 21%;
+    height: 60%;
+    background-color: white;
+    right: 21%;
+    top: 20%;
+    transform: rotate(45deg);
+}
+
+.checkbox:checked ~ .checkmark::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 6px;
+    background-color: white;
+    left: 25%;
+    top: 35%;
+    transform: rotate(135deg);
+}
