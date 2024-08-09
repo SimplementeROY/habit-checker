@@ -7,14 +7,10 @@
   grid-template-rows: auto 1fr auto;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
 }
 
 main{
-  flex: 1;
   padding: 10px 40px;
-  display: grid;
-  place-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,6 +20,7 @@ main{
 
 body *{
   font-family: "Chivo", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -53,4 +50,18 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Libre Franklin", sans-serif;
+}
+@media (10px <= width <= 853px){
+  body{
+    display: block;
+    height: auto;
+    width: 100vw;
+  }
+  #root{
+    width: 100%;
+    height: auto;
+  }
+  main{
+    width: 100vw;
+  }
 }

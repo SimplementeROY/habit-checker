@@ -92,3 +92,12 @@ input[type="time"]{
     top: 35%;
     transform: rotate(135deg);
 }
+
+@media (10px <= width <= 853px){
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 250px;
+    }
+}

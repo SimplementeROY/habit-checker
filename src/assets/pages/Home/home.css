@@ -27,3 +27,19 @@
     width: 100%;
     height: 100%;
 }
+
+@media (10px <= width <= 853px){
+    .task-manager-container{
+        padding: 0;
+    }
+    .task-manager{
+        width: 100%;
+        height: auto;
+    }
+    .add-task-button{
+        padding: 10px;
+    }
+    .manage-tasks{
+        align-items: center;
+    }
+}

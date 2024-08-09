@@ -3,10 +3,10 @@
     border-radius: 0.375rem;
     padding: 10px;
     display: flex;
-    height: 5%;
+    height: 100%;
     list-style: none;
     align-items: center;
-    height: 2.375em;
+    height: 3.375em;
 }
 
 .edit-button, .delete-button{
@@ -52,4 +52,11 @@
 
 .check:has(> .checkbox:checked) ~ .task-details {
     text-decoration: line-through;
+}
+
+@media (10px <= width <= 853px){
+    .tasks{
+        height: 100%;
+        width: 100%;
+    }
 }

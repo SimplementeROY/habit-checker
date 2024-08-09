@@ -1,5 +1,5 @@
 import { FREQUENCY_OPTIONS } from '../constantes/daysOfTheWeek'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './Form.css'
 
 
@@ -20,26 +20,7 @@ export default function AddTaskForm( { onSubmit , data } ){
             D: false,
         }
     });
-
-    useEffect(() => {
-        setTaskData({
-            id: data.id,
-            name: data.name || '',
-            hour: data.hour || '',
-            days: data.days || [],
-            completed: data.completed || {
-                L: false,
-                M: false,
-                X: false,
-                J: false,
-                V: false,
-                S: false,
-                D: false,
-            }       
-        });
-    }, [data]);
-
-    
+   
     const handleChange = (e) =>{
         const { name, value, type, checked } = e.target;
         if (type === 'checkbox'){

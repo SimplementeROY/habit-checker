@@ -37,3 +37,11 @@ nav{
     flex: 20%;
 }
 
+@media (10px <= width <= 853px){
+    header{
+        border-radius: 0px;
+    }
+    nav{
+        display: none;
+    }
+}
