@@ -13,7 +13,7 @@
 form{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
     width: 350px;
 }
 
@@ -99,5 +99,31 @@ input[type="time"]{
         flex-direction: column;
         gap: 5px;
         width: 250px;
+    }
+}
+
+@media (555px <= width <= 853px){
+    form{
+        width: 80%;
+        height: 80%;
+    }
+    .container .frequency-option {
+        margin: 0;
+        flex: 95%;
+        font-size: 26px;
+    }
+    input[type="text"], input[type="time"]{
+        font-size: 20px;
+        height: 40px;
+    }
+    label[for="hour"], label[for="name"], label[for="days"]{
+        font-size: 25px;
+    }
+    .checkmark{
+        width: 25px;
+        height: 25px;
+    }
+    .container{
+        gap: 10px;
     }
 }

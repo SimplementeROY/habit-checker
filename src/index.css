@@ -17,10 +17,12 @@ main{
   padding: 30px;
   background-color: white;
 }
+*{
+  box-sizing: border-box;
+}
 
 body *{
   font-family: "Chivo", sans-serif;
-  box-sizing: border-box;
 }
 
 body {

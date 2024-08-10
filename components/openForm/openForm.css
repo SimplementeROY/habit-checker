@@ -27,5 +27,16 @@
     color: white
 }
 
+@media (10px <= width <= 853px){
+    .add-task-text {
+        display: none;
+    }
+    .tasks-title{
+        flex: 8;
+    }
+    .add-task-button{
+        flex: 1;
+    }
+}
 
 
