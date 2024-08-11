@@ -45,12 +45,12 @@ export default function Chart({ tasksDone }) {
                 <div className="chart-container">
                     <h2 className="chart-title">Gráfico de progresión</h2>
                     <ResponsiveContainer width="100%" height="70%" className='chart'>
-                        <LineChart data={cumulativeTasksDone}>
+                        <LineChart data={cumulativeTasksDone} className='true-chart'>
                             <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
-                            <XAxis dataKey="date" tick={{ fill: '#8884d8' }} />
-                            <YAxis tick={{ fill: '#8884d8' }} />
-                            <Tooltip contentStyle={{ backgroundColor: '#8884d8', color: '#fff' }} itemStyle={{ color: '#fff' }} content={CustomTooltip}/>
-                            <Line type="monotone" dataKey="cumulativeCompletedTasks" stroke="#82ca9d" strokeWidth={2} activeDot={{ r: 8 }} />
+                            <XAxis dataKey="date" />
+                            <YAxis />
+                            <Tooltip content={CustomTooltip}/>
+                            <Line type="monotone" dataKey="cumulativeCompletedTasks" stroke="#000000" strokeWidth={2} activeDot={{ r: 8 }} />
                         </LineChart>
                     </ResponsiveContainer>
                 </div>

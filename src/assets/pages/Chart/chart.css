@@ -21,6 +21,13 @@
     border-radius: 10px;
 }
 
-@media (10px <= width <= 853px){
+.true-chart{
+    margin-left: -30px;
+}
 
+@media (10px <= width <= 853px){
+    
+    .true-chart{
+        margin-left: -100px;
+    }
 }

@@ -7,5 +7,6 @@ footer{
 @media (10px <= width <= 853px){
     footer{
         border-radius: 0px;
+        display: none;
     }
 }
