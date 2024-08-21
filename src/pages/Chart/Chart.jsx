@@ -1,22 +1,22 @@
 import React, { useMemo } from 'react';
-import Footer from '../../../../components/footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import './chart.css';
+import './Chart.css';
 
-export default function Chart({ tasksDone }) {
+export default function Chart({ habitsDone }) {
     // Calcula el total acumulado de tareas completadas
-    const cumulativeTasksDone = useMemo(() => {
+    const cumulativeHabitsDone = useMemo(() => {
         let cumulativeTotal = 0;
-        return tasksDone.map(task => {
-            if (task.completedTasks === 0){
-                cumulativeTotal -= task.numOfTasks / 2
+        return habitsDone.map(habit => {
+            if (habit.completedHabits === 0){
+                cumulativeTotal -= habit.numOfHabits / 2
             }
             else{
-                cumulativeTotal += task.completedTasks;
+                cumulativeTotal += habit.completedHabits;
             }
-            return { date: task.date, cumulativeCompletedTasks: cumulativeTotal };
+            return { date: habit.date, cumulativeCompletedHabits: cumulativeTotal };
         });
-    }, [tasksDone]);
+    }, [habitsDone]);
 
     const CustomTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
@@ -45,12 +45,12 @@ export default function Chart({ tasksDone }) {
                 <div className="chart-container">
                     <h2 className="chart-title">Gráfico de progresión</h2>
                     <ResponsiveContainer width="100%" height="70%" className='chart'>
-                        <LineChart data={cumulativeTasksDone} className='true-chart'>
+                        <LineChart data={cumulativeHabitsDone} className='true-chart'>
                             <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
                             <XAxis dataKey="date" />
                             <YAxis />
                             <Tooltip content={CustomTooltip}/>
-                            <Line type="monotone" dataKey="cumulativeCompletedTasks" stroke="#000000" strokeWidth={2} activeDot={{ r: 8 }} />
+                            <Line type="monotone" dataKey="cumulativeHabitsDone" stroke="#000000" strokeWidth={2} activeDot={{ r: 8 }} />
                         </LineChart>
                     </ResponsiveContainer>
                 </div>

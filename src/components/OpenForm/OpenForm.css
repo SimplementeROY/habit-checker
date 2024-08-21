@@ -1,40 +1,40 @@
-.manage-tasks{
+.manage-habits{
     display: flex;
     flex: 1;
 }
 
-.tasks-title{
+.habits-title{
     flex: 30%;
     margin: 0;
 }
 
-.add-task-button{
+.add-habit-button{
     flex: 10%;
     margin: 0;
     font-size: 20px;
     font-family: "Chivo", sans-serif;
 }
 
-.add-task-button:hover{
+.add-habit-button:hover{
     background-color: #5d5d5d;
     cursor: pointer;
 }
 
-.add-task-button:active{
+.add-habit-button:active{
     background-color: #4f4f4f;
 }
-.add-task-button span {
+.add-habit-button span {
     color: white
 }
 
 @media (10px <= width <= 853px){
-    .add-task-text {
+    .add-habit-text {
         display: none;
     }
-    .tasks-title{
+    .habits-title{
         flex: 8;
     }
-    .add-task-button{
+    .add-habit-button{
         flex: 1;
     }
 }

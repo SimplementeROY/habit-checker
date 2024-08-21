@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isToday, subMonths, addMonths } from 'date-fns';
 import { enUS } from 'date-fns/locale'; // Usa la localización en inglés
-import Footer from '../../../../components/footer/Footer';
-import './calendar.css';
+import Footer from '../../components/Footer/Footer';
+import './Calendar.css';
 
-const Calendar = ({ tasks }) => {
+const Calendar = ({ habitsDone }) => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const oneYearAgo = subMonths(new Date(), 12); // Un año atrás desde la fecha actual
   // Convertimos el array de tareas a un objeto para facilitar el acceso
-  const taskMap = tasks.reduce((acc, { date, completedTasks, numOfTasks }) => {
-    acc[date.trim()] = {taskCount: completedTasks, numOfTasks: numOfTasks};
+  const habitMap = habitsDone.reduce((acc, { date, completedHabits, numOfHabits }) => {
+    acc[date.trim()] = {habitCount: completedHabits, numOfHabits: numOfHabits};
     return acc;
   }, {});
 
@@ -45,8 +45,8 @@ const Calendar = ({ tasks }) => {
           <div className="calendar">
             {daysInMonth.map(day => {
               const dayString = format(day, 'dd MMM', { locale: enUS }); // Ajustado a "01 Aug"
-              const { taskCount, numOfTasks } = taskMap[dayString] || {taskCount: 0, numOfTasks: 0};
-              const opacity = taskCount === 0 ? 0 : Math.min(1, taskCount / numOfTasks);
+              const { habitCount, numOfHabits } = habitMap[dayString] || { habitCount: 0, numOfHabits: 0 };
+              const opacity = habitCount === 0 ? 0 : Math.min(1, habitCount / numOfHabits);
 
               return (
                 <div 

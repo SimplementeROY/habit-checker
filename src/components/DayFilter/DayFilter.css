@@ -1,4 +1,4 @@
-.task-filter{
+.habit-filter{
     flex: 2.3;
     display: flex;
     align-items: center;
@@ -65,7 +65,7 @@
 }
 
 @media (10px <= width <= 484px){
-    .task-filter{
+    .habit-filter{
         width: 100%;
         margin: 0;
         padding: 10px;
@@ -79,7 +79,7 @@
 }
 
 @media (457px <= width <= 853px){
-    .task-filter{
+    .habit-filter{
         width: auto;
         margin: 0;
         padding: 10px;
@@ -93,7 +93,7 @@
 }
 
 @media (555px <= width <= 853px){
-    .task-filter{
+    .habit-filter{
         width: auto;
         margin: 0;
         padding: 10px;

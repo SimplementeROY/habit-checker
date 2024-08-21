@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './assets/pages/Home/Home';
-import Chart from './assets/pages/Chart/Chart';
-import Calendar from './assets/pages/Calendar/Calendar';
-import Header from '../components/header/Header';
+import Home from './pages/Home/Home';
+import Chart from './pages/Chart/Chart';
+import Calendar from './pages/Calendar/Calendar';
+import Header from './components/Header/Header';
+import { convertDate } from './components/constantes/daysOfTheWeek';
 import './index.css';
-import { convertDate } from '../components/constantes/daysOfTheWeek';
 
 const root = createRoot(document.getElementById('root'));
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const [completedTasks, setCompletedTasks] = useState([]);
+  const [habits, setHabits] = useState([]);
+  const [completedHabits, setCompletedHabits] = useState([]);
   const [currentDate, setCurrentDate] = useState(new Date().toDateString());
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    const historyOfCompletedTasks = JSON.parse(localStorage.getItem('history')) || [{ date: convertDate(currentDate), completedTasks: 0, numOfTasks: 0 }];
-    setTasks(storedTasks);
-    setCompletedTasks(historyOfCompletedTasks);
+    const storedHabits = JSON.parse(localStorage.getItem('habits')) || [];
+    const historyOfCompletedHabits = JSON.parse(localStorage.getItem('history')) || [{ date: convertDate(currentDate), completedHabits: 0, numOfHabits: 0 }];
+    setHabits(storedHabits);
+    setCompletedHabits(historyOfCompletedHabits);
   }, []);
 
   useEffect(() => {
@@ -27,22 +27,22 @@ function App() {
 
     if (currentDate !== today) {
       setCurrentDate(today);
-      setCompletedTasks(prev => {
+      setCompletedHabits(prev => {
         const exists = prev.some(entry => entry.date === today);
         if (exists) {
           return prev.map(entry =>
-            entry.date === today ? { ...entry, completedTasks: 0 } : entry
+            entry.date === today ? { ...entry, completedHabits: 0 } : entry
           );
         }
-        return [...prev, { date: convertDate(currentDate), completedTasks: 0 }];
+        return [...prev, { date: convertDate(currentDate), completedHabits: 0 }];
       });
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    localStorage.setItem('history', JSON.stringify(completedTasks));
-  }, [tasks, completedTasks]);
+    localStorage.setItem('habits', JSON.stringify(habits));
+    localStorage.setItem('history', JSON.stringify(completedHabits));
+  }, [habits, completedHabits]);
 
   //Restablecemos las tareas completadas cuando llegue lunes
   useEffect(() => {
@@ -58,9 +58,9 @@ function App() {
 
     // Función para restablecer todas las propiedades del objeto a false
     const resetObjectProperties = () => {
-      setTasks(tasks.map((task) => {
-        Object.keys(task.wasCompleted).forEach(day => task.wasCompleted[day] = false)
-        return task
+      setHabits(habits.map((habit) => {
+        Object.keys(habit.completed).forEach(day => habit.completed[day] = false)
+        return habit
       }))
     };
 
@@ -81,10 +81,10 @@ function App() {
         <Route path="habit-checker" element={<Header />}>
           <Route
             index
-            element={<Home tasks={tasks} setTasks={setTasks} setCompletedTasks={setCompletedTasks} date={currentDate} />}
+            element={<Home habits={habits} setHabits={setHabits} setCompletedHabits={setCompletedHabits} date={currentDate} />}
           />
-          <Route path="chart" element={<Chart tasksDone={completedTasks} />} />
-          <Route path="calendar" element={<Calendar tasks={completedTasks}/>} />
+          <Route path="chart" element={<Chart habitsDone={completedHabits} />} />
+          <Route path="calendar" element={<Calendar habitsDone={completedHabits}/>} />
         </Route>
       </Routes>
     </BrowserRouter>

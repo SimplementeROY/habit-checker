@@ -3,9 +3,9 @@ import { useState } from 'react'
 import './Form.css'
 
 
-export default function AddTaskForm( { onSubmit , data } ){
+export default function Form( { onSubmit , data } ){
 
-    const [taskData, setTaskData] = useState({
+    const [habitData, setHabitData] = useState({
         id: data.id,
         name: data.name || '',
         hour: data.hour || '',
@@ -24,7 +24,7 @@ export default function AddTaskForm( { onSubmit , data } ){
     const handleChange = (e) =>{
         const { name, value, type, checked } = e.target;
         if (type === 'checkbox'){
-            setTaskData((prev) => {
+            setHabitData((prev) => {
                 if (value === 'allDays' && checked){
                     return (
                         {
@@ -42,7 +42,7 @@ export default function AddTaskForm( { onSubmit , data } ){
             })
         }
         else{
-            setTaskData((prev) => {
+            setHabitData((prev) => {
                 return(
                     {...prev, [name]:value}
                 )
@@ -53,9 +53,9 @@ export default function AddTaskForm( { onSubmit , data } ){
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        onSubmit(taskData)
-        setTaskData({
-            id: taskData.id + 1,
+        onSubmit(habitData)
+        setHabitData({
+            id: habitData.id + 1,
             name: '',
             hour: '',
             days: [],
@@ -76,7 +76,7 @@ export default function AddTaskForm( { onSubmit , data } ){
         return (
             <label className='container' key={day}>
                 <div className='check'>
-                    <input type="checkbox" className="checkbox" name="days" value={day} onChange={handleChange} checked={taskData.days.includes(day)} />
+                    <input type="checkbox" className="checkbox" name="days" value={day} onChange={handleChange} checked={habitData.days.includes(day)} />
                     <span className='checkmark'></span>
                 </div>
                 <p className='frequency-option'>{day}</p>
@@ -88,11 +88,11 @@ export default function AddTaskForm( { onSubmit , data } ){
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="name">Nombre del hábito: </label>
-                <input type="text" name="name" onChange={handleChange} value={taskData.name} placeholder='Ir al gimnasio' required/>
+                <input type="text" name="name" onChange={handleChange} value={habitData.name} placeholder='Ir al gimnasio' required/>
             </div>
             <div>
                 <label htmlFor="hour">Hora: </label>
-                <input type="time" name="hour" onChange={handleChange} value={taskData.hour} required/>
+                <input type="time" name="hour" onChange={handleChange} value={habitData.hour} required/>
             </div>
             <div className='frequency'>
                 <label htmlFor="days">Frecuencia: </label>
@@ -106,7 +106,7 @@ export default function AddTaskForm( { onSubmit , data } ){
                 {frequency}
             </div>
 
-            <button className="add-task-button-form button" type='submit'>Añadir</button>
+            <button className="add-habit-button-form button" type='submit'>Añadir</button>
         </form>
     )
 }

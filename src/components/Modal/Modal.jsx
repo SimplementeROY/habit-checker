@@ -1,9 +1,9 @@
 import ReactModal from "react-modal";
-import AddTaskForm from "../form/addTaskForm";
+import Form from "../Form/Form";
 
-import './modal.css'
+import './Modal.css'
 
-export default function ModalComponent ({isOpen, onRequestClose, onSubmit, formData }){
+export default function Modal ({isOpen, onRequestClose, onSubmit, formData }){
 
     return (
         <ReactModal
@@ -14,7 +14,7 @@ export default function ModalComponent ({isOpen, onRequestClose, onSubmit, formD
             overlayClassName="modalOverlay"
         >
             <button className="close-form-button" onClick={onRequestClose}>X</button>
-            <AddTaskForm onSubmit={onSubmit} data={formData}/>
+            <Form onSubmit={onSubmit} data={formData}/>
         </ReactModal>
     )
 }

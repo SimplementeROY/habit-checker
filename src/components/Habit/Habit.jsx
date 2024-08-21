@@ -1,47 +1,47 @@
-import './tasks.css';
+import './Habit.css';
 import { editIcon, delIcon } from '../constantes/icons';
 
-export default function Task({ task, handleEdit, handleDelete, toggleTask, isDisabled, isFilteredDay, selectedDay ,handleErrorMessage }) {
+export default function Habit({ habit, handleEdit, handleDelete, toggleHabit, isDisabled, isFilteredDay, selectedDay, handleErrorMessage }) {
 
     const handleCheckboxChange = () => {
         if (isFilteredDay) {
             handleErrorMessage(true);
             setTimeout(() => handleErrorMessage(false), 1500); // Limpiar el mensaje después de 3 segundos
         } else {
-            toggleTask(task.id);
+            toggleHabit(habit.id);
         }
     };
 
     return (
         <>
-            <li className={`tasks ${isDisabled ? 'disabled' : ''}`} key={task.id}>
-            <label className='container task-info-container'>
+            <li className={`habits ${isDisabled ? 'disabled' : ''}`} key={habit.id}>
+            <label className='container habit-info-container'>
                 <div className='check'>
                     <input
                         className="checkbox"
                         type="checkbox"
                         onChange={handleCheckboxChange}
-                        checked={task.completed[selectedDay] === true}
+                        checked={habit.completed[selectedDay] === true}
                     />
                     <span className='checkmark'></span>
                 </div>
-                <div className='task-details'>
-                    <p className='hour'>{task.hour}</p>
-                    <p className='task-name'>{task.name}</p>
+                <div className='habit-details'>
+                    <p className='hour'>{habit.hour}</p>
+                    <p className='habit-name'>{habit.name}</p>
                 </div>
             </label>
-            <div className="manage-tasks-buttons">
+            <div className="manage-habits-buttons">
                 <button 
                   className="edit-button" 
                   aria-label="Edit" 
-                  onClick={() => handleEdit(task)} 
+                  onClick={() => handleEdit(habit)} 
                   disabled={isDisabled}>
                   {editIcon}
                 </button>
                 <button 
                   className="delete-button" 
                   aria-label="Delete" 
-                  onClick={() => handleDelete(task.id)} 
+                  onClick={() => handleDelete(habit.id)} 
                   disabled={isDisabled}>
                   {delIcon}
                 </button>

@@ -1,4 +1,4 @@
-.tasks-container{
+.habits-container{
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -7,7 +7,7 @@
     margin: 0;
 }
 
-.task-manager{
+.habit-manager{
     display: flex;
     flex-direction: column;
     position: relative;
@@ -29,19 +29,19 @@
 }
 
 @media (10px <= width <= 853px){
-    .task-manager-container{
+    .habit-manager-container{
         padding: 0;
     }
-    .task-manager{
+    .habit-manager{
         width: 100%;
         height: auto;
         padding: 30px;
         box-shadow: none;
     }
-    .add-task-button{
+    .add-habit-button{
         padding: 10px;
     }
-    .manage-tasks{
+    .manage-habits{
         align-items: center;
     }
 }

@@ -1,8 +1,8 @@
 import { FREQUENCY_OPTIONS } from "../constantes/daysOfTheWeek";
 import { useState, useEffect } from "react";
-import './filterTasks.css';
+import './DayFilter.css';
 
-export default function TaskFilter({ filteredDay, setFilteredDay, today }) {
+export default function DayFilter({ filteredDay, setFilteredDay, today }) {
     const [daysOfWeek, setDaysOfWeek] = useState([]);
     //console.log(filteredDay)
     //console.log(DAY_OF_THE_WEEK)
@@ -42,7 +42,7 @@ export default function TaskFilter({ filteredDay, setFilteredDay, today }) {
     const days = FREQUENCY_OPTIONS.map((day, index) => {
         return (
             <label htmlFor="day" key={'Filter' + day} className={isSelectedClassName(day)}>
-                <input type="checkbox" className="task-filter" value={day} onChange={handleSelect} checked={filteredDay === day} />
+                <input type="checkbox" className="habit-filter" value={day} onChange={handleSelect} checked={filteredDay === day} />
                 <p>{day}</p>
                 <span>{daysOfWeek[index]}</span>
             </label>
@@ -50,7 +50,7 @@ export default function TaskFilter({ filteredDay, setFilteredDay, today }) {
     });
 
     return (
-        <div className="task-filter">
+        <div className="habit-filter">
             {days}
         </div>
     );
