@@ -1,6 +1,6 @@
 import './Habit.css';
-import { editIcon, delIcon } from '../constantes/icons';
-
+import { delIcon } from '../icons/DeleteIcon';
+import { editIcon } from '../icons/EditIcon';
 export default function Habit({ habit, handleEdit, handleDelete, toggleHabit, isDisabled, isFilteredDay, selectedDay, handleErrorMessage }) {
 
     const handleCheckboxChange = () => {

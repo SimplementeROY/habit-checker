@@ -5,6 +5,29 @@ import './Chart.css';
 
 export default function Chart({ habitsDone }) {
     // Calcula el total acumulado de tareas completadas
+    const mockData = [
+        {date: "12 de junio",
+            cumulativeHabitsDone: 12,
+            top: 100
+        },
+        {date: "12 de junio",
+            cumulativeHabitsDone: 11,
+            top: 100
+        },
+        {date: "12 de junio",
+            cumulativeHabitsDone: 8,
+            top: 100
+        },
+        {date: "12 de junio",
+            cumulativeHabitsDone: 15,
+            top: 100
+        },
+        {date: "12 de junio",
+            cumulativeHabitsDone: 1,
+            top: 100
+        },
+
+    ]
     const cumulativeHabitsDone = useMemo(() => {
         let cumulativeTotal = 0;
         return habitsDone.map(habit => {
@@ -14,13 +37,13 @@ export default function Chart({ habitsDone }) {
             else{
                 cumulativeTotal += habit.completedHabits;
             }
-            return { date: habit.date, cumulativeCompletedHabits: cumulativeTotal };
+            return { date: habit.date, cumulativeCompletedHabits: cumulativeTotal, top: 100 };
         });
     }, [habitsDone]);
 
     const CustomTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
-            if (payload[0].value < 0){
+            if (payload[0].value <= 0){
                 return (
                     <div className="custom-tooltip">
                         <p className="label">{label}</p>
@@ -48,9 +71,9 @@ export default function Chart({ habitsDone }) {
                         <LineChart data={cumulativeHabitsDone} className='true-chart'>
                             <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
                             <XAxis dataKey="date" />
-                            <YAxis />
+                            <YAxis dataKey="top"/>
                             <Tooltip content={CustomTooltip}/>
-                            <Line type="monotone" dataKey="cumulativeHabitsDone" stroke="#000000" strokeWidth={2} activeDot={{ r: 8 }} />
+                            <Line type="monotone" dataKey="cumulativeCompletedHabits" stroke="#000000" strokeWidth={2} activeDot={{ r: 8 }} />
                         </LineChart>
                     </ResponsiveContainer>
                 </div>

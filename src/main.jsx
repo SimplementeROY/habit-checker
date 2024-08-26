@@ -21,6 +21,7 @@ function App() {
     setHabits(storedHabits);
     setCompletedHabits(historyOfCompletedHabits);
   }, []);
+  localStorage.removeItem('history')
 
   useEffect(() => {
     const today = new Date().toDateString();

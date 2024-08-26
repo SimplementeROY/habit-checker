@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react"
 import Habit from "../../components/Habit/Habit";
 import Footer from "../../components/Footer/Footer";
-import { DAYS_OF_THE_WEEK } from "../../components/constantes/daysOfTheWeek";
 import OpenForm from "../../components/OpenForm/OpenForm";
 import DayFilter from "../../components/DayFilter/DayFilter";
 import Modal from "../../components/Modal/Modal";
-import { convertDate } from "../../components/constantes/daysOfTheWeek";
+import { convertDate, DAYS_OF_THE_WEEK } from "../../constantes/daysOfTheWeek";
 import './Home.css'
 
 export default function Home({ habits = [], setHabits, setCompletedHabits, date }) {

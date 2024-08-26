@@ -1,4 +1,4 @@
-import { FREQUENCY_OPTIONS } from '../constantes/daysOfTheWeek'
+import { FREQUENCY_OPTIONS } from '../../constantes/daysOfTheWeek';
 import { useState } from 'react'
 import './Form.css'
 
