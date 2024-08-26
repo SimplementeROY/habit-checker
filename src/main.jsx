@@ -5,7 +5,7 @@ import Home from './pages/Home/Home';
 import Chart from './pages/Chart/Chart';
 import Calendar from './pages/Calendar/Calendar';
 import Header from './components/Header/Header';
-import { convertDate } from './components/constantes/daysOfTheWeek';
+import { convertDate } from './constantes/daysOfTheWeek';
 import './index.css';
 
 const root = createRoot(document.getElementById('root'));
